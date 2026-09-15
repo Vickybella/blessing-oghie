@@ -177,7 +177,7 @@ export function AboutFull() {
             </div>
           </div>
           <a
-            href="/cv.pdf"
+            href="/Blessing-Oghie.pdf"
             download="Ms. Blessing Oghie.pdf"
             className="inline-flex w-fit items-center gap-2 rounded-full border border-border-strong px-4 py-2 font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:border-signal/40 hover:text-foreground sm:ml-auto sm:border-0 sm:px-0 sm:py-0"
           >

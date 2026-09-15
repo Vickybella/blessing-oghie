@@ -106,7 +106,7 @@ export function Nav() {
             {downloadOpen && (
               <div className="absolute right-0 top-full mt-2 w-48 overflow-hidden rounded-xl border border-white/10 bg-black/95 backdrop-blur">
                 <a
-                  href="/cv.pdf"
+                  href="/Blessing-Oghie.pdf"
                   download="Ms. Blessing Oghie.pdf"
                   onClick={() => setDownloadOpen(false)}
                   className="block px-4 py-3 font-mono text-xs uppercase tracking-widest text-white/80 transition-colors hover:bg-white/5 hover:text-signal"
