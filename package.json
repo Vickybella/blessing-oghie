@@ -4,14 +4,26 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "playwright install chromium || true",
     "build": "next build",
+    "postbuild": "node scripts/generate-portfolio-pdf.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-pdf": "node scripts/generate-portfolio-pdf.mjs"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
+    "@upstash/redis": "^1.38.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.1.1",
+    "lucide-react": "^1.38.0",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-hook-form": "^7.87.0",
+    "resend": "^6.28.0",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
+    "playwright": "^1.62.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated on every build by the postbuild script (scripts/generate-portfolio-pdf.mjs) —
+# committing it would add a ~16MB binary diff to git history on every single build
+/public/portfolio.pdf

@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+@media (min-width: 768px) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f6f5fa;
+  --surface-2: #ebe9f2;
+  --foreground: #0b0b10;
+  --muted: #57565f;
+  --muted-2: #8f8e97;
+  --border: rgba(11, 11, 16, 0.1);
+  --border-strong: rgba(11, 11, 16, 0.18);
+  --signal: #7c3aed;
+  --signal-dim: #a78bfa;
+  --danger: #d7311f;
+  --font-display: "Cabinet Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Synonym", "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-signal: var(--signal);
+  --color-signal-dim: var(--signal-dim);
+  --color-danger: var(--danger);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono, monospace);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--signal);
+  color: #ffffff;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-signal {
+  color: var(--signal);
+}
+
+.bg-signal {
+  background: var(--signal);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 20px 50px -18px rgba(124, 58, 237, 0.28);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Instagram's embed script hardcodes its iframe to a fixed ~326px width
+   regardless of its container, which pushes the whole page wider than
+   the viewport on narrow screens (< ~360px). Force it back down to fit. */
+.instagram-media {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 767px) {
+  html {
+    cursor: auto !important;
+  }
 }
