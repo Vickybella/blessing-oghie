@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Download, LineChart, Megaphone, Target } from "lucide-react";
+import { ArrowUpRight, Download, LineChart, Megaphone, Target, ShieldCheck } from "lucide-react";
 import { Portrait } from "./portrait";
 import { Certificates } from "./certificates";
 import { tools } from "./tool-icons";
@@ -23,6 +23,11 @@ const philosophy = [
     title: "Performance told me if I was right.",
     body: "The market doesn't argue with you. It just doesn't click, or it does. Ad accounts are one of the fastest feedback loops available for testing an idea about human behaviour.",
     icon: Target,
+  },
+  {
+    title: "When Meta shuts a door, I find the process for opening it back up.",
+    body: "Recovered a business portfolio's full admin access from Meta within a single month, restored a suspended Facebook and Instagram account, and got a permanently disabled account reinstated — each through the correct documentation and direct escalation with Meta, not guesswork or shortcuts. Currently running the same process on a Facebook account restricted from creating ads.",
+    icon: ShieldCheck,
   },
 ];
 
